@@ -14,8 +14,8 @@ st.markdown('* **6-10 = Good**')
 dataset = st.selectbox('Select Wine type', ('Red Wine', 'White Wine'))
 
 def get_data(dataset):
-    data_red = pd.read_excel('data/winequality-red.xlsx')
-    data_white = pd.read_excel('data/winequality-white.xlsx')
+    data_red = pd.read_excel('Data/winequality-red.xlsx')
+    data_white = pd.read_excel('Data/winequality-white.xlsx')
     if dataset == 'Red Wine':
         data = data_red
     else:
