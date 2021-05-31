@@ -23,8 +23,8 @@ def get_data(dataset):
         data = data_white
     return data
 
+data_heatmap= get_data(dataset)
 data= get_data(dataset)
-data_plot= data
 def get_dataset(dataset):
     bins = (1, 5, 10)
     groups = ['1', '2']
@@ -42,7 +42,7 @@ with st.beta_expander('Data Visualisation'):
 
     if plot=='Heat Map':
         fig1=plt.figure(figsize=(8,6))
-        heatmap = sns.heatmap(data_plot.corr()[['quality']].sort_values(by='quality', ascending=False), vmin=-1,
+        heatmap = sns.heatmap(data_heatmap.corr()[['quality']].sort_values(by='quality', ascending=False), vmin=-1,
                               vmax=1, annot=True)
         heatmap.set_title('Features Correlating with quality', fontdict={'fontsize': 18}, pad=16)
         st.pyplot(fig1)
